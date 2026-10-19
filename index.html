@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Wagera - Pakistan's Largest Coffee Brand!</title>
+  <meta name="description" content="Great Coffee, Reliable WiFi, Reasonable Prices, Comfortable Working Space and Free Drinking Water. 14 locations in 5 cities across Pakistan!" />
+  <link rel="canonical" href="https://coffeewagera.com/" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="https://coffeewagera.com/wp-content/uploads/2024/04/cropped-cwlogo-192x192-1.jpg" />
+  <link rel="apple-touch-icon" href="https://coffeewagera.com/wp-content/uploads/2024/04/cropped-cwlogo-192x192-1.jpg" />
+
+  <!-- Google Fonts: Poppins & Open Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="chatbot.css" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      
+      <!-- Logo -->
+      <a href="#hero" class="logo-link" aria-label="Coffee Wagera Home">
+        <img src="https://coffeewagera.com/wp-content/uploads/2024/05/CW-White-Logo.png" alt="Coffee Wagera" class="logo-img logo-white" />
+        <img src="https://coffeewagera.com/wp-content/uploads/2024/05/CW-Dark-Logo.png" alt="Coffee Wagera" class="logo-img logo-dark" />
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        
+        <!-- About CW Dropdown -->
+        <div class="nav-item">
+          <a href="#about" class="nav-link">
+            About CW <i class="fa-solid fa-angle-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#about" class="dropdown-link">Our Story</a></li>
+            <li><a href="#about" class="dropdown-link">Our Values</a></li>
+            <li><a href="#founder" class="dropdown-link">Our Founder</a></li>
+            <li><a href="#pillars" class="dropdown-link">Awards & Recognition</a></li>
+            <li><a href="#app" class="dropdown-link">Mobile App</a></li>
+          </ul>
+        </div>
+
+        <!-- Coffee Education Dropdown -->
+        <div class="nav-item">
+          <a href="#pillars" class="nav-link">
+            Coffee Education <i class="fa-solid fa-angle-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="javascript:void(0)" onclick="openModal('baristaModal')" class="dropdown-link">Barista Training</a></li>
+            <li><a href="#menu" class="dropdown-link">Coffee Knowledge</a></li>
+            <li><a href="#media" class="dropdown-link">Coffee Videos</a></li>
+            <li><a href="#menu" class="dropdown-link">MushTonic</a></li>
+            <li><a href="#menu" class="dropdown-link">CW Dripper</a></li>
+          </ul>
+        </div>
+
+        <!-- Information Dropdown -->
+        <div class="nav-item">
+          <a href="#locations" class="nav-link">
+            Information <i class="fa-solid fa-angle-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#locations" class="dropdown-link">Locations</a></li>
+            <li><a href="#menu" class="dropdown-link">Menu & Prices</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('franchiseModal')" class="dropdown-link">Franchising</a></li>
+            <li><a href="#about" class="dropdown-link">Free Workspace</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources Dropdown -->
+        <div class="nav-item">
+          <a href="#feedback" class="nav-link">
+            Resources <i class="fa-solid fa-angle-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#feedback" class="dropdown-link">Customer Testimonials</a></li>
+            <li><a href="#media" class="dropdown-link">CW in Media</a></li>
+            <li><a href="#social" class="dropdown-link">Social Community</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick CTAs inside Mobile Nav -->
+        <div class="mobile-cta-wrap" style="display: none;">
+          <a href="#menu" class="btn btn-accent btn-sm">Order Coffee</a>
+        </div>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <a href="#menu" class="btn btn-outline-white btn-sm hide-mobile" id="navOrderBtn">
+          <i class="fa-solid fa-mug-hot"></i> Order Coffee
+        </a>
+        
+        <!-- Cart Drawer Toggle -->
+        <button class="cart-btn" id="openCartBtn" aria-label="View Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cartBadgeCount">0</span>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <div class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION WITH VIDEO BACKGROUND & MUSH GREETING AUDIO
+       ========================================================================== -->
+  <section class="hero-section" id="hero">
+    <!-- Ambient Background Video -->
+    <video class="hero-video-bg" autoplay loop muted playsinline poster="https://coffeewagera.com/wp-content/uploads/2024/04/CW-New-Logo.png">
+      <source src="https://coffeewagera.com/wp-content/uploads/2024/04/CW-Slider-Video.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-logo-wrap">
+        <img src="https://coffeewagera.com/wp-content/uploads/2024/04/CW-New-Logo.png" alt="Coffee Wagera Emblem" class="hero-brand-logo" />
+      </div>
+
+      <h1 class="hero-title">Pakistan’s Largest Coffee Brand</h1>
+
+      <p class="hero-tagline">
+        Great Coffee &bull; Reliable High-Speed WiFi &bull; Reasonable Prices &bull; Comfortable Free Working Space &bull; Free Filtered Drinking Water
+      </p>
+
+      <!-- Audio Button with Mush's Voice Greeting -->
+      <div class="audio-greeting-wrap">
+        <button class="audio-btn" id="mushAudioBtn" aria-label="Listen to Greeting from Mush">
+          <span class="audio-icon-circle">
+            <i class="fa-solid fa-play" id="audioIcon"></i>
+          </span>
+          <span id="audioStatusText">Greeting from Mush!</span>
+          <div class="audio-waves">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <audio id="mushAudio" preload="auto">
+          <source src="https://coffeewagera.com/wp-content/uploads/2024/03/Mush-Greetings.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="hero-quick-stats">
+        <div class="stat-item">
+          <span class="stat-num">14+</span>
+          <span class="stat-label">Locations</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Major Cities</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Fresh Roasted</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">Free</span>
+          <span class="stat-label">WiFi & Water</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT COFFEE WAGERA & 6 CORE USPs
+       ========================================================================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      
+      <div class="about-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-leaf"></i> Empowering Communities</span>
+        <h2 class="section-title">About Coffee Wagera</h2>
+        <p class="section-subtitle">
+          Coffee Wagera (CW) was launched in April 2018, with a dream to become the biggest and the best coffee brand of Pakistan! From the beginning, there’s a clear focus on social responsibility which includes staff welfare, low-waste practices, supporting women’s empowerment and inclusivity.
+        </p>
+      </div>
+
+      <!-- 6 Signature USPs Grid -->
+      <div class="about-usp-grid">
+        
+        <!-- USP 1: Locations -->
+        <div class="usp-card">
+          <div class="usp-icon-wrap">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Location-Icon.svg" alt="CW Locations" />
+          </div>
+          <p>Pakistan's largest coffee brand with 14 locations in 5 cities, in less than 7 years!</p>
+        </div>
+
+        <!-- USP 2: Workspace -->
+        <div class="usp-card">
+          <div class="usp-icon-wrap">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Workspace-Icon.svg" alt="CW Free Workspace" />
+          </div>
+          <p>Dine-in locations also offer free workspace, reliable high-speed wifi, and free drinking water!</p>
+        </div>
+
+        <!-- USP 3: Fresh Roast -->
+        <div class="usp-card">
+          <div class="usp-icon-wrap">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Coffee-Icon.svg" alt="CW Fresh Coffee" />
+          </div>
+          <p>Excellent coffees with freshly roasted beans from local artisanal roasters.</p>
+        </div>
+
+        <!-- USP 4: Low Prices & Discounts -->
+        <div class="usp-card">
+          <div class="usp-icon-wrap">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Low-Cost-Icon.svg" alt="CW Low Cost" />
+          </div>
+          <p>Low prices with special discounts for students, educators and senior citizens.</p>
+        </div>
+
+        <!-- USP 5: Inclusion & Local Support -->
+        <div class="usp-card">
+          <div class="usp-icon-wrap">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Icon-Support-Local.svg" alt="Support Local" />
+          </div>
+          <p>We actively support women entrepreneurs, eco-friendly low-waste practices and disability inclusion.</p>
+        </div>
+
+        <!-- USP 6: App & Academy -->
+        <div class="usp-card">
+          <div class="usp-icon-wrap">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Home-App-Icon.png" alt="Loyalty App" />
+          </div>
+          <p>We have a rewarding loyalty app, an official online eStore, and our own certified Barista Academy!</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOUNDER & CHIEF HAPPINESS OFFICER (MUSH PANJWANI)
+       ========================================================================== -->
+  <section class="founder-section" id="founder">
+    <div class="container">
+      <div class="founder-card">
+        <div class="founder-inner">
+          
+          <div class="founder-content">
+            <span class="founder-tag"><i class="fa-solid fa-award"></i> The Visionary Behind CW</span>
+            <h2 class="founder-title">Our Founder &amp; Chief Happiness Officer</h2>
+            
+            <div class="founder-bio">
+              <p>
+                <strong>Mush Panjwani</strong> has been a sales, marketing, and training expert for over 35 years. He has worked with top corporate leaders, innovators, and entrepreneurs across 20 countries. Mush is also the acclaimed author of <em><strong>Dhinchak Life</strong></em>, a life-changing book about living a vibrant, fantastic life!
+              </p>
+              <p>
+                Mush launched Coffee Wagera on 1st April 2018 with a dream of making it the best and the biggest coffee brand across Pakistan — bringing people together over exceptional brew and compassionate service.
+              </p>
+              <p>
+                Mush is also a certified 'Happiness Trainer' and regularly trains at corporates and non-profits.
+              </p>
+            </div>
+
+            <div class="founder-actions">
+              <a href="https://mushpanjwani.com/" target="_blank" rel="noopener noreferrer" class="btn btn-accent">
+                Visit MushPanjwani.com <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <button class="btn btn-outline-white" onclick="openModal('baristaModal')">
+                Meet The Baristas
+              </button>
+            </div>
+          </div>
+
+          <div class="founder-image-wrap">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Mush-Image.png" alt="Mush Panjwani - Founder of Coffee Wagera" class="founder-image" />
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6 PILLARS / HIGHLIGHTS SECTION
+       ========================================================================== -->
+  <section class="pillars-section" id="pillars">
+    <div class="container">
+      
+      <div class="text-center" style="margin-bottom: 3.5rem;">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> Explore The Universe of CW</span>
+        <h2 class="section-title">Everything Coffee Wagera</h2>
+        <p class="section-subtitle">
+          From certified specialty barista education to franchising opportunities, explore all the avenues of Pakistan's favorite coffee sanctuary.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        
+        <!-- Pillar 1: Barista Academy -->
+        <div class="pillar-card has-bg">
+          <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Home-Image-Two.jpg" alt="Barista Academy" class="pillar-bg-img" />
+          <div class="pillar-overlay"></div>
+          <div class="pillar-content">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Home-Barista-Icon.png" alt="Barista Icon" class="pillar-icon" />
+            <h3 class="pillar-title">Barista Academy</h3>
+            <p class="pillar-desc">We offer foundation training in barista skills at any of our convenient locations in Karachi.</p>
+            <button class="btn btn-outline-white btn-sm" onclick="openModal('baristaModal')">Learn More</button>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Locations -->
+        <div class="pillar-card solid-primary">
+          <div class="pillar-content">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Home-Location-Icon.png" alt="Location Icon" class="pillar-icon" />
+            <h3 class="pillar-title">Locations</h3>
+            <p class="pillar-desc">In less than seven years, CW has opened 14 locations across 5 major cities of Pakistan.</p>
+            <a href="#locations" class="btn btn-outline-white btn-sm">Explore Map</a>
+          </div>
+        </div>
+
+        <!-- Pillar 3: eStore -->
+        <div class="pillar-card has-bg">
+          <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Home-Image-eStore.jpg" alt="eStore" class="pillar-bg-img" />
+          <div class="pillar-overlay"></div>
+          <div class="pillar-content">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/03/eStore.png" alt="eStore Icon" class="pillar-icon" />
+            <h3 class="pillar-title">eStore</h3>
+            <p class="pillar-desc">Buy freshly-roasted beans from local roasters, coffee brewing tools, reusable mugs and more!</p>
+            <a href="#menu" class="btn btn-outline-white btn-sm" onclick="filterMenuCategory('beans')">Shop Beans</a>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Mobile App -->
+        <div class="pillar-card solid-light" id="app">
+          <div class="pillar-content">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Home-App-Icon.png" alt="CW App Icon" class="pillar-icon" />
+            <h3 class="pillar-title">Mobile App</h3>
+            <p class="pillar-desc">Download the app to earn &amp; redeem beans points, check locations, view prices and unlock exclusive offers.</p>
+            <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+              <a href="https://play.google.com/store/apps/details?id=com.reactree.coffee_wagera" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">
+                <i class="fa-brands fa-google-play"></i> Android
+              </a>
+              <a href="https://apps.apple.com/pk/app/coffee-wagera/id1547945728" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">
+                <i class="fa-brands fa-apple"></i> iOS
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 5: Franchising -->
+        <div class="pillar-card has-bg">
+          <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Home-Image-Four.jpg" alt="Franchising" class="pillar-bg-img" />
+          <div class="pillar-overlay"></div>
+          <div class="pillar-content">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Home-Franchise-Icon.png" alt="Franchise Icon" class="pillar-icon" />
+            <h3 class="pillar-title">Franchising</h3>
+            <p class="pillar-desc">Franchising opportunities are available nationwide for dine-in locations, food courts, kiosks and petrol pumps.</p>
+            <button class="btn btn-outline-white btn-sm" onclick="openModal('franchiseModal')">Apply Now</button>
+          </div>
+        </div>
+
+        <!-- Pillar 6: Awards -->
+        <div class="pillar-card solid-light">
+          <div class="pillar-content">
+            <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Home-Award-Icon.png" alt="Awards Icon" class="pillar-icon" />
+            <h3 class="pillar-title">Awards</h3>
+            <p class="pillar-desc">Proud to receive prestigious awards and recognitions from Brands Foundation, APRA, and national industry summits!</p>
+            <a href="#about" class="btn btn-outline-primary btn-sm">Our Honors</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ORDER NOW / INTERACTIVE MENU SECTION
+       ========================================================================== -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-mug-saucer"></i> Crafted With Love</span>
+        <h2 class="section-title">Order Now &bull; Fresh Menu</h2>
+        <p class="section-subtitle">
+          From a full range of hot &amp; cold coffees, handcrafted beverages, healthy snacks, to roasted whole beans delivered right to your door.
+        </p>
+      </div>
+
+      <!-- Menu Category Filter Tabs -->
+      <div class="menu-filter-nav">
+        <button class="menu-filter-btn active" onclick="filterMenuCategory('all')">All Items</button>
+        <button class="menu-filter-btn" onclick="filterMenuCategory('hot')">Hot Beverages</button>
+        <button class="menu-filter-btn" onclick="filterMenuCategory('cold')">Cold Beverages</button>
+        <button class="menu-filter-btn" onclick="filterMenuCategory('savories')">Savories &amp; Snacks</button>
+        <button class="menu-filter-btn" onclick="filterMenuCategory('desserts')">Desserts &amp; Bakes</button>
+        <button class="menu-filter-btn" onclick="filterMenuCategory('beans')">Beans &amp; Merch</button>
+      </div>
+
+      <!-- Menu Items Dynamic Grid -->
+      <div class="menu-items-grid" id="menuItemsGrid">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CW IN MEDIA (VIDEO SHOWCASE)
+       ========================================================================== -->
+  <section class="media-section" id="media">
+    <div class="container">
+      
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-video"></i> Media Spotlight</span>
+        <h2 class="section-title">CW in Media</h2>
+        <p class="section-subtitle">
+          Our founder, Mush Panjwani, has been featured on numerous TV shows, entrepreneurship podcasts, and business masterclasses across Pakistan.
+        </p>
+      </div>
+
+      <div class="media-grid">
+        
+        <!-- Video 1 -->
+        <div class="media-card">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/aBtEDlAg0i4" title="Mush Panjwani Runway Talks Exclusive Interview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="media-caption">
+            <h4>Mush Panjwani | Exclusive Interview | Runway Talks</h4>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="media-card">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/WXtRvA6VaIM" title="How to Start a Coffee Shop in Pakistan | FounderTalk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="media-caption">
+            <h4>#FounderTalk | How to start a Coffee Shop in Pakistan?</h4>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="media-card">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/wURdMm5W9ns" title="How He Started Coffee Wagera | Success Stories" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="media-caption">
+            <h4>How He Started Coffee Wagera | Business Case Studies</h4>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="media-card">
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/aPAZd6gLjpw" title="Coffee Wagera | Pakistan Ka Apna Starbucks | GTV News" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="media-caption">
+            <h4>Pakistan Ka Apna Coffee Chain | Mush Panjwani | GTV</h4>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       LOCATIONS EXPLORER
+       ========================================================================== -->
+  <section class="locations-section" id="locations">
+    <div class="container">
+      
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-map-location-dot"></i> Find Us Nationwide</span>
+        <h2 class="section-title">Our Coffee Shops &amp; Workspaces</h2>
+        <p class="section-subtitle">
+          14 welcoming locations across Karachi, Islamabad, Lahore, and Hyderabad. Drop by for great coffee, reliable high-speed Wi-Fi, and a distraction-free work environment.
+        </p>
+      </div>
+
+      <!-- City Filter Tabs -->
+      <div class="city-filter-nav">
+        <button class="city-btn active" onclick="filterLocations('all')">All Locations</button>
+        <button class="city-btn" onclick="filterLocations('Karachi')">Karachi (10)</button>
+        <button class="city-btn" onclick="filterLocations('Islamabad')">Islamabad (1)</button>
+        <button class="city-btn" onclick="filterLocations('Lahore')">Lahore (1)</button>
+        <button class="city-btn" onclick="filterLocations('Hyderabad')">Hyderabad (1)</button>
+      </div>
+
+      <!-- Locations Grid -->
+      <div class="locations-grid" id="locationsGrid">
+        <!-- Populated via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CUSTOMER FEEDBACK / TESTIMONIALS CAROUSEL
+       ========================================================================== -->
+  <section class="feedback-section" id="feedback">
+    <div class="feedback-overlay"></div>
+    <div class="container feedback-content">
+      
+      <div class="text-center">
+        <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #fff;"><i class="fa-solid fa-heart"></i> Loved By Coffee Aficionados</span>
+        <h2 class="section-title">Customer Feedback</h2>
+        <p class="section-subtitle">
+          Over 50,000+ happy customers every month sharing their heartwarming experiences from Karachi to Islamabad.
+        </p>
+      </div>
+
+      <!-- Carousel Wrapper -->
+      <div class="testimonial-carousel-container">
+        
+        <button class="slider-btn slider-prev" id="prevSlideBtn" aria-label="Previous Testimonial">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="testimonial-track" id="testimonialTrack">
+          
+          <!-- Slide 1 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-bubble">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p class="testimonial-text">
+                "Every time I visit we have a great experience, staff coffee service all 10/10. All guys are well-trained and qualified. Highly recommended! ❣️"
+              </p>
+              <h4 class="testimonial-author">Syed Ali</h4>
+              <span class="testimonial-branch">CW Dolmen, Karachi</span>
+              <div class="star-rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-bubble">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p class="testimonial-text">
+                "A haven for introverted tech workers who thrive on remote work and cherish their coffee breaks. They provide complimentary wifi for work, allowing you to focus undisturbed for hours. The coffee boasts a delightful taste!"
+              </p>
+              <h4 class="testimonial-author">Warda Shafiq</h4>
+              <span class="testimonial-branch">CW i8, Islamabad</span>
+              <div class="star-rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-bubble">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p class="testimonial-text">
+                "The place is super awesome, high speed WiFi, calm, clean environment and welcoming staff. I would suggest all students to spend time there. Coffee was so tasty 😋"
+              </p>
+              <h4 class="testimonial-author">Sadiq Ali</h4>
+              <span class="testimonial-branch">CW 5 Star, Karachi</span>
+              <div class="star-rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-bubble">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p class="testimonial-text">
+                "Awesome Coffee!! Staff was great and so helpful. My go-to spot in Hyderabad for productive working sessions and Hazelnut Cocochino."
+              </p>
+              <h4 class="testimonial-author">Yasir Khan</h4>
+              <span class="testimonial-branch">CW Boulevard, Hyderabad</span>
+              <div class="star-rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-bubble">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p class="testimonial-text">
+                "The ambiance in the sitting area is inviting and cozy. I savored a heavenly delicious vanilla frappe and found the chicken croissant to be top tier. Altogether, a pleasant experience!"
+              </p>
+              <h4 class="testimonial-author">Maham Tahir</h4>
+              <span class="testimonial-branch">CW Bahria Town, Lahore</span>
+              <div class="star-rating">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="slider-btn slider-next" id="nextSlideBtn" aria-label="Next Testimonial">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </div>
+
+      <!-- Indicators -->
+      <div class="carousel-indicators" id="carouselIndicators">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+        <span class="dot" onclick="goToSlide(3)"></span>
+        <span class="dot" onclick="goToSlide(4)"></span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SOCIAL COMMUNITY & APP DOWNLOAD
+       ========================================================================== -->
+  <section class="social-banner-section" id="social">
+    <div class="container">
+      <div class="social-banner-card">
+        <h2>Follow Us On Social Media</h2>
+        <div class="social-icon-row">
+          <a href="https://www.facebook.com/CoffeeWagera/" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="CW on Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/coffeewagera/" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="CW on Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/c/CoffeeWagera" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="CW on YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://twitter.com/CoffeeWagera" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="CW on X / Twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/coffeewagera/" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="CW on LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.tiktok.com/@coffeewageraofficial" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="CW on TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top">
+        
+        <!-- Col 1: Bio & Logo -->
+        <div class="footer-widget">
+          <img src="https://coffeewagera.com/wp-content/uploads/2024/05/CW-Dark-Logo.png" alt="Coffee Wagera" class="footer-logo" style="filter: brightness(0) invert(1);" />
+          <p class="footer-bio">
+            Coffee Wagera was launched in April 2018 with a dream to become the biggest and the best coffee brand of Pakistan. Dedicated to sustainable sourcing, low-waste practices, staff welfare, and inclusion.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-widget">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#about">Our Values</a></li>
+            <li><a href="#founder">Our Founder</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('franchiseModal')">Franchising Opportunities</a></li>
+            <li><a href="#locations">Store Directory</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Offerings -->
+        <div class="footer-widget">
+          <h4>CW Offerings</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="openModal('baristaModal')">Barista Academy</a></li>
+            <li><a href="#menu">Hot &amp; Cold Beverages</a></li>
+            <li><a href="#menu" onclick="filterMenuCategory('beans')">Artisan Whole Beans</a></li>
+            <li><a href="#menu">Home Brewing Gear</a></li>
+            <li><a href="#about">Free Co-Working</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Mobile App -->
+        <div class="footer-widget">
+          <h4>CW Mobile App</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 1rem;">Earn coffee bean points on every order &amp; redeem free beverages!</p>
+          <div class="app-badges">
+            <a href="https://play.google.com/store/apps/details?id=com.reactree.coffee_wagera" target="_blank" rel="noopener">
+              <img src="https://coffeewagera.com/wp-content/uploads/2024/05/Google-Play.png" alt="Download on Google Play" class="app-badge-img" />
+            </a>
+            <a href="https://apps.apple.com/pk/app/coffee-wagera/id1547945728" target="_blank" rel="noopener">
+              <img src="https://coffeewagera.com/wp-content/uploads/2024/05/App-Store.png" alt="Download on Apple App Store" class="app-badge-img" />
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026. All Rights Reserved by <a href="https://coffeewagera.com/" target="_blank">Coffee Wagera</a> &bull; Pakistan's Largest Coffee Brand.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CART SLIDE-IN DRAWER
+       ========================================================================== -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    
+    <div class="cart-drawer-header">
+      <h3><i class="fa-solid fa-mug-hot"></i> Your CW Basket</h3>
+      <button class="close-drawer-btn" onclick="closeCart()" aria-label="Close Cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-items-body" id="cartItemsList">
+      <!-- Populated via JavaScript -->
+    </div>
+
+    <div class="cart-drawer-footer" id="cartFooter">
+      <div class="cart-subtotal-row">
+        <span>Total:</span>
+        <span id="cartTotalPrice">PKR 0</span>
+      </div>
+      <button class="btn btn-primary" style="width: 100%;" onclick="checkoutSimulate()">
+        Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- ==========================================================================
+       MODAL: FRANCHISE APPLICATION
+       ========================================================================== -->
+  <div class="modal-overlay" id="franchiseModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-store"></i> Franchise Opportunities</h3>
+        <button class="modal-close-btn" onclick="closeModal('franchiseModal')">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 0.95rem;">
+          Join Pakistan's fastest-growing indigenous coffee brand! Opportunities available nationwide for dine-in cafes, food-court outlets, express kiosks, and gas station locations.
+        </p>
+
+        <form id="franchiseForm" onsubmit="handleFranchiseSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="applicantName">Full Name *</label>
+            <input type="text" id="applicantName" class="form-input" placeholder="e.g. Ali Khan" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="applicantEmail">Email Address *</label>
+            <input type="email" id="applicantEmail" class="form-input" placeholder="you@domain.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="applicantPhone">Phone / WhatsApp *</label>
+            <input type="tel" id="applicantPhone" class="form-input" placeholder="+92 300 1234567" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="targetCity">Proposed City / Location *</label>
+            <input type="text" id="targetCity" class="form-input" placeholder="e.g. Islamabad, Lahore, Multan, Faisalabad" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="franchiseFormat">Preferred Model</label>
+            <select id="franchiseFormat" class="form-select">
+              <option value="dine-in">Full Dine-In & Co-Working Cafe</option>
+              <option value="kiosk">Express Kiosk / Takeaway</option>
+              <option value="food-court">Mall Food Court</option>
+              <option value="fuel-pump">Fuel Station Drive-Thru</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="applicantMessage">Additional Notes / Background</label>
+            <textarea id="applicantMessage" class="form-textarea" placeholder="Tell us about your background or commercial space available..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Submit Franchise Inquiry <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: BARISTA ACADEMY TRAINING
+       ========================================================================== -->
+  <div class="modal-overlay" id="baristaModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-graduation-cap"></i> CW Barista Academy</h3>
+        <button class="modal-close-btn" onclick="closeModal('baristaModal')">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="https://coffeewagera.com/wp-content/uploads/2024/04/Home-Image-Two.jpg" alt="Barista Training" style="border-radius: var(--radius-md); margin-bottom: 1.5rem;" />
+        <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--primary);">Foundation in Professional Barista Skills</h4>
+        <p style="color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 0.95rem;">
+          Whether you want to pursue a career in the specialty coffee industry or master the craft of espresso pulling and latte art at home, CW Academy provides hands-on mentorship with our seasoned head baristas.
+        </p>
+
+        <ul style="margin-bottom: 1.5rem; line-height: 1.8; color: var(--text-secondary); font-size: 0.95rem;">
+          <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Bean science, origin profiles &amp; cupping</li>
+          <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Commercial espresso machine operation &amp; calibration</li>
+          <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Milk steaming, microfoam chemistry &amp; latte art basics</li>
+          <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Pour-over methods (CW Dripper, V60, Aeropress, French Press)</li>
+          <li><i class="fa-solid fa-check" style="color: var(--accent); margin-right: 8px;"></i> Customer hospitality and café hygiene standards</li>
+        </ul>
+
+        <div style="background: var(--bg-light); padding: 1.25rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; border-left: 4px solid var(--accent);">
+          <strong>Course Duration:</strong> 3 Intense Practical Days<br />
+          <strong>Certification:</strong> Official CW Certified Barista Diploma<br />
+          <strong>Location:</strong> Karachi Flagship Branch
+        </div>
+
+        <button class="btn btn-primary" style="width: 100%;" onclick="enrollBarista()">
+          Enroll / Register Interest <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notice" id="toastNotice">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMsg">Success</span>
+  </div>
+
+  <!-- JavaScript Application Logic -->
+  <script src="app.js"></script>
+  <!-- Coffee Wagera AI Chatbot -->
+  <script src="chatbot.js"></script>
+</body>
+</html>
