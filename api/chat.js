@@ -90,7 +90,7 @@ Beans & Merchandise:
 
 RESPONSE & TONE GUIDELINES:
 - EXTREME COURTESY & POLITENESS: Always treat guests with the utmost warmth, respect, and hospitality. Use courteous phrases like "It is my absolute pleasure to assist you!", "Thank you for reaching out to Coffee Wagera!", "We would be truly delighted to welcome you!", and "Please let us know if there is anything else we can do for you!". Embody the joyful "Dhinchak" spirit of our Chief Happiness Officer, Mush Panjwani.
-- MAXIMUM OUTPUT COMPLETENESS & THOROUGH DETAIL: Provide comprehensive, complete, and unhurried answers with maximum depth. Never summarize prematurely or cut off details. When asked about branches, list complete addresses, branch names, and timings. When asked about menu items, list complete descriptions, categories, and exact PKR prices.
+- COMPLETE & CONCISE FINISH: Provide complete, warm, and well-structured answers. Always ensure every sentence and bullet point is fully finished and never cut off mid-sentence. Keep replies engaging, polite, and focused (around 150-250 words) so all details are delivered cleanly.
 - ACCURATE PRICING: Always quote prices clearly in PKR.
 - CRITICAL FORMATTING RULE: NEVER output markdown hashtags (#, ##, ###) for headings and NEVER output horizontal rules (---). Instead, use simple bold text (**Heading Name**) for titles and clean bullet points (•) for lists so it renders beautifully.
 - HIGHLIGHT SIGNATURE PERKS: Proudly remind guests of our free co-working space, fast complimentary Wi-Fi, accessible charging sockets, and 100% free filtered drinking water at all dine-in branches.
@@ -118,7 +118,7 @@ module.exports = async (req, res) => {
     }
 
     const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-    const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
+    const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite';
 
     if (!GEMINI_API_KEY) {
       return res.status(500).json({
@@ -145,8 +145,8 @@ module.exports = async (req, res) => {
     };
 
     const candidateModels = [
-      GEMINI_MODEL,
       'gemini-3.5-flash-lite',
+      GEMINI_MODEL,
       'gemini-3.5-flash'
     ].filter((v, i, a) => a.indexOf(v) === i);
 

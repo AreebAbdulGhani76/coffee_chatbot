@@ -115,10 +115,11 @@
       // Italic *text*
       .replace(/(?<!\*)\*(?!\*)(.*?)(?<!\*)\*(?!\*)/g, "<em>$1</em>")
       // Bullet lists (* item, - item)
-      .replace(/^[\*\-]\s+(.*)$/gim, "• $1<br>")
+      .replace(/^[\*\-]\s+(.*)$/gim, "• $1")
       // Clean isolated stray asterisks
       .replace(/^\s*\*\s*$/gm, "")
       // Paragraphs & Line breaks
+      .replace(/\r\n/g, "\n")
       .replace(/\n\n+/g, "<br><br>")
       .replace(/\n/g, "<br>");
     return html;
